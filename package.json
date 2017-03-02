@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -p --config webpack.config.prod.js && cp -r src/server/* dist/ && cp src/server/.babelrc dist/",
-    "start": "node src/server"
+    "start:dev": "node src/server",
+    "start": "NODE_ENV=production node ./dist/index.js"
   },
   "dependencies": {
     "babel": "^6.23.0",
