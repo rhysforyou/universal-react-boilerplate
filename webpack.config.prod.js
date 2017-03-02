@@ -1,6 +1,7 @@
 /* eslint-env node */
 const webpack = require('webpack')
 const path = require('path')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
   devtool: 'cheap-module-source-map',
@@ -10,7 +11,7 @@ module.exports = {
   },
   output: {
     filename: '[chunkhash].[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist/public')
   },
   module: {
     rules: [
@@ -24,6 +25,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
-    })
+    }),
+    new ManifestPlugin()
   ]
 }
