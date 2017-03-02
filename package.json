@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -p --config webpack.config.prod.js && cp -r src/server/* dist/ && cp src/server/.babelrc dist/",
-    "start:dev": "node src/server",
-    "start": "NODE_ENV=production node ./dist/index.js"
+    "start": "node src/server",
+    "start:production": "NODE_ENV=production node ./dist/index.js"
   },
   "dependencies": {
     "babel": "^6.23.0",
@@ -31,8 +31,9 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.10.0",
     "html-webpack-plugin": "^2.28.0",
+    "react-hot-loader": "next",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-hot-middleware": "^2.17.1"
   }
 }

@@ -16,7 +16,10 @@ if (process.env.NODE_ENV === 'production') {
   const config = require('../../webpack.config.dev')
   const compiler = webpack(config)
 
-  app.use(require('webpack-dev-middleware')(compiler))
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true, publicPath: config.output.publicPath
+  }))
+  app.use(require('webpack-hot-middleware')(compiler))
   scriptPaths = ['/bundle.js']
 }
 
@@ -32,5 +35,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(3000, () => {
-  console.log('Universal React App listening on http://localhost:3000')
+  console.info('Universal React App listening on http://localhost:3000')
 })

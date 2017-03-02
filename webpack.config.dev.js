@@ -1,4 +1,5 @@
 /* eslint-env node */
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
@@ -7,10 +8,15 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 9000
+    port: 3000
   },
   entry: {
-    bundle: './src/index.js'
+    bundle: [
+      'react-hot-loader/patch',
+      'webpack-hot-middleware/client',
+      'webpack/hot/only-dev-server',
+      './src/index.js'
+    ]
   },
   output: {
     filename: '[name].js',
@@ -21,8 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        use: 'babel-loader',
-        
+        use: 'babel-loader'
       }
     ]
   },
@@ -30,6 +35,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
       filename: 'index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
