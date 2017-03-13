@@ -1,5 +1,6 @@
 [options]
 module.name_mapper.extension='css' -> '<PROJECT_ROOT>/src/flow/stub/CSSModuleStub.js'
+module.name_mapper.extension='json' -> '<PROJECT_ROOT>/src/flow/stub/ManifestStub.js'
 
 [libs]
 flow-typed/
