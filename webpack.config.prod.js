@@ -6,8 +6,7 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: {
-    bundle: './src/index.js',
-    vendor: ['react', 'react-dom']
+    bundle: './src/index.js'
   },
   output: {
     filename: '[chunkhash].[name].js',
@@ -31,7 +30,8 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
+      name: 'vendor',
+      minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
     }),
     new ManifestPlugin()
   ]
