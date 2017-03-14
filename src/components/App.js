@@ -8,7 +8,7 @@ type Props = {
 
 const App = ({ title }: Props) => (
   <div className={styles.app}>
-    <h1 className="title">{ title }</h1>
+    <h1 className={styles.title}>{ title }</h1>
   </div>
 )
 
