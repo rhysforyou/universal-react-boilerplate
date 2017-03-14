@@ -1,7 +1,12 @@
 [options]
 module.name_mapper.extension='css' -> '<PROJECT_ROOT>/src/flow/stub/CSSModuleStub.js'
 module.name_mapper.extension='json' -> '<PROJECT_ROOT>/src/flow/stub/ManifestStub.js'
+module.name_mapper='webpack\.config' -> '<PROJECT_ROOT>/src/flow/stub/WebpackConfig.js'
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
 
 [libs]
 flow-typed/
 src/flow/lib/
+
+[ignore]
+.*/dist/.*

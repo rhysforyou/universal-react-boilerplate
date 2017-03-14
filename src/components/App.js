@@ -1,6 +1,7 @@
 /* @flow */
 import React from 'react'
 import styles from './App.css'
+import GlobalCounter from '../containers/GlobalCounter'
 
 type Props = {
   title?: string
@@ -9,6 +10,7 @@ type Props = {
 const App = ({ title }: Props) => (
   <div className={styles.app}>
     <h1 className={styles.title}>{ title }</h1>
+    <GlobalCounter />
   </div>
 )
 

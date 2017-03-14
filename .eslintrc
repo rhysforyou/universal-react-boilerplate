@@ -45,7 +45,7 @@
     "keyword-spacing": "warn",
     "linebreak-style": "error",
     "no-alert": "error",
-    "no-duplicate-imports": "warn",
+    "no-duplicate-imports": "off",
     "no-global-assign": "error",
     "no-implicit-coercion": "error",
     "no-multi-spaces": "warn",
@@ -64,6 +64,7 @@
     "space-in-parens": "warn",
     "space-infix-ops": "warn",
     "space-unary-ops": ["warn", {"words": true, "nonwords": false}],
-    "valid-jsdoc": "error"
+    "valid-jsdoc": "error",
+    "import/named": "off"
   }
 }

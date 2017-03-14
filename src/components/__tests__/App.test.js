@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react'
-import App from '../App'
 import { shallow } from 'enzyme'
+import App from '../App'
 
 const setup = propOverrides => {
   const props = Object.assign({
