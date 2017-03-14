@@ -2,10 +2,22 @@
 import React from 'react'
 import styles from './App.css'
 
-const App = () => (
+type Props = {
+  title?: string
+}
+
+const App = ({ title }: Props) => (
   <div className={styles.app}>
-    <h1>Hello, Universal React</h1>
+    <h1 className="title">{ title }</h1>
   </div>
 )
+
+App.propTypes = {
+  title: React.PropTypes.string.isRequired
+}
+
+App.defaultProps = {
+  title: 'Hello Universal React'
+}
 
 export default App
