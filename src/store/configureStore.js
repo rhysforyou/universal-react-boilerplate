@@ -1,11 +1,5 @@
-/* @flow */
-import { createStore } from 'redux'
-import demoApp from '../reducers/demoApp'
-
-import type { Store } from 'redux'
-import type { State } from '../reducers/demoApp'
-import type { Action } from '../actions/types'
-
-const configureStore: () => Store<State, Action> = () => createStore(demoApp)
-
-export default configureStore
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./configureStore.prod')
+} else {
+  module.exports = require('./configureStore.dev')
+}
