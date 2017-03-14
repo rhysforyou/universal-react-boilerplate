@@ -1,7 +1,7 @@
 /* @flow */
 import React from 'react'
 
-type Props = {
+export type Props = {
   count: number,
   onIncrement?: () => void,
   onDecrement?: () => void,
@@ -10,7 +10,7 @@ type Props = {
 
 const Counter = ({ count, onIncrement, onDecrement, onReset }: Props) => (
   <div>
-    <p>Counter: {count}</p>
+    <p className="count">Counter: {count}</p>
     {onIncrement && <button onClick={onIncrement.bind(this)}>Increment</button>}
     {onDecrement && <button onClick={onDecrement.bind(this)}>Decrement</button>}
     {onReset && <button onClick={onReset.bind(this)}>Reset</button>}

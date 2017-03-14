@@ -16,6 +16,7 @@ ShallowWrapper {
     >
         Hello, tests
     </h1>
+    <Connect(Counter) />
 </div>,
   "nodes": Array [
     <div
@@ -26,6 +27,7 @@ ShallowWrapper {
       >
             Hello, tests
       </h1>
+      <Connect(Counter) />
 </div>,
   ],
   "options": Object {},
@@ -74,6 +76,7 @@ ShallowWrapper {
           >
                     Hello, tests
           </h1>
+          <Connect(Counter) />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -84,6 +87,7 @@ ShallowWrapper {
           >
                     Hello, tests
           </h1>
+          <Connect(Counter) />
 </div>,
       },
       "_renderedNodeType": 0,

@@ -10,7 +10,7 @@ type Props = {
 const App = ({ title }: Props) => (
   <div className={styles.app}>
     <h1 className={styles.title}>{ title }</h1>
-    <GlobalCounter />
+    <CurrentCounter />
   </div>
 )
 
