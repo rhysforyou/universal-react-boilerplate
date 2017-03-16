@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production webpack -p --config webpack.config.prod.js && cp -r src/server/* dist/ && cp src/server/.babelrc dist/",
     "start": "node src/server",
     "start:production": "NODE_ENV=production node ./dist/index.js",
-    "test": "jest"
+    "test": "jest --colors --verbose"
   },
   "dependencies": {
     "babel": "^6.23.0",
