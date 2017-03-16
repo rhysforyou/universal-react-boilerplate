@@ -31,6 +31,9 @@ if (process.env.NODE_ENV === 'production') {
 app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
+// Set port
+app.set('port', process.env.PORT || 3000)
+
 // Serve static webpack assets in production
 app.use('/', express.static(path.resolve(__dirname, 'public')))
 
@@ -38,6 +41,6 @@ app.get('*', (req: $Request, res: $Response) => {
   res.render('index', { scriptPaths })
 })
 
-app.listen(3000, () => {
-  console.info('Universal React App listening on http://localhost:3000')
+app.listen(app.get('port'), () => {
+  console.info(`Universal React App listening on http://0.0.0.0:${app.get('port')}`)
 })
