@@ -1,7 +1,6 @@
 FROM node:alpine
 
 # Create app directory
-RUN mkdir -p /app
 COPY . /app
 WORKDIR /app
 
