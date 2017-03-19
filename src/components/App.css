@@ -8,3 +8,29 @@
 .title {
   font-weight: 200;
 }
+
+.navigation {
+  padding: 0;
+  padding-bottom: 1em;
+}
+.navigation li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.navigation li:last-child {
+  margin: 0;
+}
+
+.navigationLink {
+  color: palevioletred;
+  text-decoration: none;
+  padding: 0.5em;
+  border-radius: 3px;
+}
+
+.activeLink {
+  color: white;
+  background: palevioletred;
+}

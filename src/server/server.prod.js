@@ -6,6 +6,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
+import { StaticRouter as Router } from 'react-router'
 import App from '../components/App'
 import configureStore from '../store/configureStore'
 
@@ -33,7 +34,9 @@ app.get('*', (req: $Request, res: $Response) => {
   const innerHTML = ReactDOMServer.renderToString(
     <AppContainer>
       <Provider store={store}>
-        <App />
+        <Router location={req.url}>
+          <App />
+        </Router>
       </Provider>
     </AppContainer>
   )
