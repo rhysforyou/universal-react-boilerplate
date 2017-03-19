@@ -12,7 +12,7 @@ import configureStore from '../store/configureStore'
 // eslint-disable-next-line no-duplicate-imports
 import type { $Request, $Response } from 'express'
 
-const sources = ['manifest.js', 'vendor.js', 'bundle.js']
+const sources = ['vendor.js', 'bundle.js']
 const manifestPath = path.resolve(__dirname, 'public/manifest.json')
 const manifest: {[key: string]: string} = JSON.parse(fs.readFileSync(manifestPath))
 const scriptPaths = sources
@@ -37,7 +37,8 @@ app.get('*', (req: $Request, res: $Response) => {
       </Provider>
     </AppContainer>
   )
-  res.render('index', { scriptPaths, innerHTML })
+  const initialState = JSON.stringify(store.getState())
+  res.render('index', { scriptPaths, innerHTML, initialState })
 })
 
 // Start server
