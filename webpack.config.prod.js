@@ -1,6 +1,7 @@
 /* eslint-env node */
 const webpack = require('webpack')
 const path = require('path')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
@@ -21,16 +22,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]'
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
             }
-          }
-        ]
+          ]
+        })
       }
     ]
   },
@@ -39,6 +42,7 @@ module.exports = {
       name: 'vendor',
       minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
     }),
-    new ManifestPlugin()
+    new ManifestPlugin(),
+    new ExtractTextPlugin("styles.css")
   ]
 }
