@@ -16,7 +16,10 @@ module.exports = {
     setImmediate: false
   },
   entry: {
-    index: './src/server/server.prod.js'
+    index: [
+      'babel-polyfill',
+      './src/server/server.prod.js'
+    ]
   },
   output: {
     filename: '[name].js',

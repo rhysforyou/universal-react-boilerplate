@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 export type Props = {
   count: number,

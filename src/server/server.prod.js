@@ -31,17 +31,27 @@ app.use('/', express.static(path.resolve(__dirname, 'public')))
 // Render index template to all routes
 app.get('*', (req: $Request, res: $Response) => {
   const store = configureStore()
+  const context = {}
   const innerHTML = ReactDOMServer.renderToString(
     <AppContainer>
       <Provider store={store}>
-        <Router location={req.url}>
+        <Router context={context} location={req.url}>
           <App />
         </Router>
       </Provider>
     </AppContainer>
   )
   const initialState = JSON.stringify(store.getState())
-  res.render('index', { scriptPaths, innerHTML, initialState })
+  if (context.url) {
+    // Somewhere a `<Redirect>` was rendered
+    res.writeHead(302, {
+      Location: context.url
+    })
+    res.end()
+  } else {
+    // we're good, send the response
+    res.render('index', { scriptPaths, innerHTML, initialState })
+  }
 })
 
 // Start server

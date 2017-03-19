@@ -32,6 +32,7 @@ const App = ({ title }: Props) => (
     <ul className={styles.navigation}>
       <Link exact to="/">Home</Link>
       <Link to="/counter">Counter</Link>
+      <Link to="/async">Async</Link>
     </ul>
 
     <Route path="/counter" component={GlobalCounter} />

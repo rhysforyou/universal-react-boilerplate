@@ -7,7 +7,10 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 module.exports = {
   devtool: 'cheap-module-source-map',
   entry: {
-    bundle: './src/index.js',
+    bundle: [
+      'babel-polyfill',
+      './src/index.js'
+    ]
   },
   output: {
     filename: '[chunkhash].[name].js',

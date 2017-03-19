@@ -9,6 +9,7 @@ import type { $Request, $Response } from 'express'
 
 const compiler = webpack(config)
 const scriptPaths = ['/bundle.js']
+const initialState = JSON.stringify(new Object())
 
 const app = express()
 
@@ -24,7 +25,7 @@ app.use(require('webpack-hot-middleware')(compiler))
 
 // Render index template to all routes
 app.get('*', (req: $Request, res: $Response) => {
-  res.render('index', { scriptPaths })
+  res.render('index', { scriptPaths, initialState })
 })
 
 // Start server
