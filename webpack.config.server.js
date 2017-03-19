@@ -1,16 +1,21 @@
 /* eslint-env node */
-const webpack = require('webpack')
 const path = require('path')
-const ManifestPlugin = require('webpack-manifest-plugin')
+const nodeExternals = require('webpack-node-externals');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   devtool: 'cheap-module-source-map',
+  target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false
+  },
   entry: {
-    bundle: './src/index.js',
+    index: './src/server/server.prod.js'
   },
   output: {
-    filename: '[chunkhash].[name].js',
-    path: path.resolve(__dirname, 'dist/public')
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -34,11 +39,8 @@ module.exports = {
       }
     ]
   },
+  externals: [ nodeExternals() ],
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
-    }),
-    new ManifestPlugin()
+    new CopyWebpackPlugin([{from: './src/server/views', to: './views'}])
   ]
 }

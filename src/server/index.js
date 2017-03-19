@@ -1,2 +1,7 @@
 require('babel-register')
-require('./server')
+
+if (process.env.NODE_ENV === 'production') {
+  require('./server.prod')
+} else {
+  require('./server.dev')
+}

@@ -7,9 +7,9 @@
   "author": "Rhys Powell",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production webpack -p --config webpack.config.prod.js && cp -r src/server/* dist/ && cp src/server/.babelrc dist/",
+    "build": "NODE_ENV=production webpack -p --config webpack.config.prod.js && NODE_ENV=production webpack -p --config webpack.config.server.js",
     "start": "node src/server",
-    "start:production": "NODE_ENV=production node ./dist/index.js",
+    "start:production": "NODE_ENV=production node ./dist",
     "test": "jest --colors --verbose"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "babel-eslint": "^7.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.2",
     "enzyme": "^2.7.1",
     "eslint": "^3.16.1",
@@ -51,7 +52,8 @@
     "style-loader": "^0.13.2",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
-    "webpack-hot-middleware": "^2.17.1"
+    "webpack-hot-middleware": "^2.17.1",
+    "webpack-node-externals": "^1.5.4"
   },
   "jest": {
     "moduleNameMapper": {
