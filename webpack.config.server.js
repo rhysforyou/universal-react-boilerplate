@@ -7,8 +7,13 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   target: 'node',
   node: {
+    console: false,
+    global: false,
+    process: false,
+    Buffer: false,
+    __filename: false,
     __dirname: false,
-    __filename: false
+    setImmediate: false
   },
   entry: {
     index: './src/server/server.prod.js'
@@ -27,7 +32,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader' },
+          { loader: 'node-style-loader' },
           {
             loader: 'css-loader',
             options: {

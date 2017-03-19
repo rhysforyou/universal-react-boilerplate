@@ -2,6 +2,12 @@
 import express from 'express'
 import path from 'path'
 import fs from 'fs'
+import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import { AppContainer } from 'react-hot-loader'
+import { Provider } from 'react-redux'
+import App from '../components/App'
+import configureStore from '../store/configureStore'
 
 // eslint-disable-next-line no-duplicate-imports
 import type { $Request, $Response } from 'express'
@@ -23,7 +29,15 @@ app.use('/', express.static(path.resolve(__dirname, 'public')))
 
 // Render index template to all routes
 app.get('*', (req: $Request, res: $Response) => {
-  res.render('index', { scriptPaths })
+  const store = configureStore()
+  const innerHTML = ReactDOMServer.renderToString(
+    <AppContainer>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </AppContainer>
+  )
+  res.render('index', { scriptPaths, innerHTML })
 })
 
 // Start server
