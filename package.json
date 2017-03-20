@@ -7,7 +7,9 @@
   "author": "Rhys Powell",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production webpack -p --config webpack.config.prod.js && NODE_ENV=production webpack --config webpack.config.server.js",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "webpack -p --config config/webpack.config.prod.js",
+    "build:server": "NODE_ENV=production webpack --config config/webpack.config.server.js",
     "start": "node src/server",
     "start:production": "NODE_ENV=production node ./dist",
     "test": "jest --colors --verbose",

@@ -6,7 +6,7 @@ const path = require('path')
 module.exports = {
   devtool: 'cheap-eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, '../dist'),
     compress: true,
     port: 3000
   },
@@ -21,7 +21,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: '/'
   },
   module: {
@@ -47,7 +47,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: path.resolve(__dirname, '../public/index.html'),
       filename: 'index.html'
     }),
     new webpack.HotModuleReplacementPlugin()

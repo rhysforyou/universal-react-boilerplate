@@ -1,6 +1,6 @@
 /* eslint-env node */
 const path = require('path')
-const nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '../dist')
   },
   module: {
     rules: [
@@ -49,6 +49,6 @@ module.exports = {
   },
   externals: [ nodeExternals() ],
   plugins: [
-    new CopyWebpackPlugin([{from: './src/server/views', to: './views'}])
+    new CopyWebpackPlugin([{ from: './src/server/views', to: './views' }])
   ]
 }

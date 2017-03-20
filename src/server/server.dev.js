@@ -2,7 +2,7 @@
 import express from 'express'
 import path from 'path'
 import webpack from 'webpack'
-import config from '../../webpack.config.dev'
+import config from '../../config/webpack.config.dev'
 
 // eslint-disable-next-line no-duplicate-imports
 import type { $Request, $Response } from 'express'

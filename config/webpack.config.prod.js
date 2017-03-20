@@ -1,7 +1,7 @@
 /* eslint-env node */
 const webpack = require('webpack')
 const path = require('path')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     filename: '[chunkhash].[name].js',
-    path: path.resolve(__dirname, 'dist/public')
+    path: path.resolve(__dirname, '../dist/public')
   },
   module: {
     rules: [
@@ -46,6 +46,6 @@ module.exports = {
       minChunks: module => module.context && module.context.indexOf('node_modules') !== -1
     }),
     new ManifestPlugin(),
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin('styles.css')
   ]
 }
