@@ -21,6 +21,10 @@
   "env": {
     "browser": true
   },
+  "globals": {
+    "Promise": false,
+    "Generator": false
+  },
   "rules": {
     "arrow-body-style": "warn",
     "arrow-parens": ["warn", "as-needed"],

@@ -18,10 +18,8 @@ const configureStore: () => Store<State, Action> = () => {
     undefined,
     composeEnhancers(applyMiddleware(createLogger({ collapsed: true }), sagaMiddleware))
   )
-
   sagaMiddleware.run(mySaga)
-
-  return store;
+  return store
 }
 
 export default configureStore

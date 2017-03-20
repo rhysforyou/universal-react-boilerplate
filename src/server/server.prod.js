@@ -15,7 +15,7 @@ import type { $Request, $Response } from 'express'
 
 const sources = ['vendor.js', 'bundle.js']
 const manifestPath = path.resolve(__dirname, 'public/manifest.json')
-const manifest: {[key: string]: string} = JSON.parse(fs.readFileSync(manifestPath))
+const manifest: {[key: string]: string} = JSON.parse(fs.readFileSync(manifestPath).toString())
 const scriptPaths = sources
   .map(source => `/${manifest[source]}`)
 
