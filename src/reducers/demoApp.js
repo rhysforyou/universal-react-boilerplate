@@ -10,7 +10,7 @@ import type { Reducer } from 'redux'
 
 export type State = {
   counter: CounterState,
-  entites: {
+  entities: {
     packages: PackagesState
   }
 }

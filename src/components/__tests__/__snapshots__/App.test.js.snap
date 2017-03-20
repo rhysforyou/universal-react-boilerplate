@@ -16,7 +16,30 @@ ShallowWrapper {
     >
         Hello, tests
     </h1>
-    <Connect(Counter) />
+    <ul
+        className="navigation"
+    >
+        <Link
+            exact={true}
+            to="/"
+        >
+            Home
+        </Link>
+        <Link
+            to="/counter"
+        >
+            Counter
+        </Link>
+        <Link
+            to="/async"
+        >
+            Async
+        </Link>
+    </ul>
+    <Route
+        component={[Function]}
+        path="/counter"
+    />
 </div>,
   "nodes": Array [
     <div
@@ -27,7 +50,30 @@ ShallowWrapper {
       >
             Hello, tests
       </h1>
-      <Connect(Counter) />
+      <ul
+            className="navigation"
+      >
+            <Link
+                  exact={true}
+                  to="/"
+            >
+                  Home
+            </Link>
+            <Link
+                  to="/counter"
+            >
+                  Counter
+            </Link>
+            <Link
+                  to="/async"
+            >
+                  Async
+            </Link>
+      </ul>
+      <Route
+            component={[Function]}
+            path="/counter"
+      />
 </div>,
   ],
   "options": Object {},
@@ -76,7 +122,30 @@ ShallowWrapper {
           >
                     Hello, tests
           </h1>
-          <Connect(Counter) />
+          <ul
+                    className="navigation"
+          >
+                    <Link
+                              exact={true}
+                              to="/"
+                    >
+                              Home
+                    </Link>
+                    <Link
+                              to="/counter"
+                    >
+                              Counter
+                    </Link>
+                    <Link
+                              to="/async"
+                    >
+                              Async
+                    </Link>
+          </ul>
+          <Route
+                    component={[Function]}
+                    path="/counter"
+          />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -87,7 +156,30 @@ ShallowWrapper {
           >
                     Hello, tests
           </h1>
-          <Connect(Counter) />
+          <ul
+                    className="navigation"
+          >
+                    <Link
+                              exact={true}
+                              to="/"
+                    >
+                              Home
+                    </Link>
+                    <Link
+                              to="/counter"
+                    >
+                              Counter
+                    </Link>
+                    <Link
+                              to="/async"
+                    >
+                              Async
+                    </Link>
+          </ul>
+          <Route
+                    component={[Function]}
+                    path="/counter"
+          />
 </div>,
       },
       "_renderedNodeType": 0,

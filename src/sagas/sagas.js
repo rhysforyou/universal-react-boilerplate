@@ -10,12 +10,15 @@ import type {
   PackageSearchAction
 } from '../actions/types'
 
-function *searchPackages(action: PackageSearchAction) {
+export function searchApi(query: string): Promise<any> {
+  fetch(`http://registry.npmjs.org/-/v1/search?text=${query}`)
+    .then(response => response.json())
+}
+
+export function *searchPackages(action: PackageSearchAction): Generator<*,*,*> {
   const { query } = action
   try {
-    const response = yield call(() =>
-      fetch(`http://registry.npmjs.org/-/v1/search?text=${query}`)
-        .then(response => response.json()))
+    const response = yield call(searchApi, query)
 
     yield put(packageSearchSucceeded(query, response.objects))
   } catch (e) {
@@ -23,6 +26,6 @@ function *searchPackages(action: PackageSearchAction) {
   }
 }
 
-export default function *mySaga() {
+export default function *mySaga(): Generator<*,*,*> {
   yield takeEvery(PACKAGE_SEARCH, searchPackages)
 }
