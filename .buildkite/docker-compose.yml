@@ -1,9 +1,17 @@
 version: '2'
 services:
-  web:
+  node6:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.v6
+    volumes:
+      - ..:/app
+    ports:
+      - "3000:3000"
+  node7:
+    build:
+      context: .
+      dockerfile: Dockerfile.v7
     volumes:
       - ..:/app
     ports:
