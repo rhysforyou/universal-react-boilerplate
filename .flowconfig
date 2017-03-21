@@ -10,3 +10,4 @@ src/flow/lib/
 
 [ignore]
 .*/dist/.*
+.*/node_modules/stylelint/.*

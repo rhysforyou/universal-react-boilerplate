@@ -1,8 +1,8 @@
 .app {
-    text-size-adjust: none;
-    font-family: helvetica, arial, sans-serif;
-    line-height: 200%;
-    padding: 6px 20px 30px;
+  text-size-adjust: none;
+  font-family: helvetica, arial, sans-serif;
+  line-height: 200%;
+  padding: 6px 20px 30px;
 }
 
 .title {
@@ -13,6 +13,7 @@
   padding: 0;
   padding-bottom: 1em;
 }
+
 .navigation li {
   list-style: none;
   display: inline-block;
