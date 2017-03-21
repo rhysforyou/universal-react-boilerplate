@@ -17,9 +17,12 @@ const sagaMiddleware = createSagaMiddleware()
 
 const configureStore: () => Store<State, Action> = () => {
   const store = createStore(demoApp, initialState, applyMiddleware(sagaMiddleware))
+
   sagaMiddleware.run(mySaga)
+
+  store.runSaga = sagaMiddleware.run
+
   return store
 }
-
 
 export default configureStore

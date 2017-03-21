@@ -19,6 +19,7 @@ env:
 globals:
   Promise: false
   Generator: false
+  ReactClass: false
 rules:
   arrow-body-style: "warn"
   arrow-parens:

@@ -1,8 +1,9 @@
 /* @flow */
 import React from 'react'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
+import routes from '../routes/routes'
 import styles from './App.css'
-import GlobalCounter from '../containers/GlobalCounter'
 
 import type { Element } from 'react'
 
@@ -34,8 +35,7 @@ const App = ({ title }: Props) => (
       <Link to="/counter">Counter</Link>
       <Link to="/async">Async</Link>
     </ul>
-
-    <Route path="/counter" component={GlobalCounter} />
+    {renderRoutes(routes)}
   </div>
 )
 
