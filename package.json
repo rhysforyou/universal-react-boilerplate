@@ -48,6 +48,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.2",
     "enzyme": "^2.7.1",
+    "eslint": "^3.18.0",
     "eslint-config-standard": "beta",
     "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-standard": "beta",
