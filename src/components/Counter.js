@@ -10,7 +10,7 @@ export type Props = {
 
 const Counter = ({ count, onIncrement, onDecrement, onReset }: Props) => (
   <div>
-    <p className="count">Counter: {count}</p>
+    <p className='count'>Counter: {count}</p>
     {onIncrement && <button onClick={onIncrement.bind(this)}>Increment</button>}
     {onDecrement && <button onClick={onDecrement.bind(this)}>Decrement</button>}
     {onReset && <button onClick={onReset.bind(this)}>Reset</button>}

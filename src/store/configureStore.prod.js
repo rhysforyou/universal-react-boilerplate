@@ -8,7 +8,7 @@ import type { Store } from 'redux'
 import type { State } from '../reducers/demoApp'
 import type { Action } from '../actions/types'
 
-let initialState: any | void = undefined
+let initialState: any | void
 if (typeof window !== 'undefined' && window.initialReduxState) {
   initialState = window.initialReduxState
 }
@@ -20,6 +20,5 @@ const configureStore: () => Store<State, Action> = () => {
   sagaMiddleware.run(mySaga)
   return store
 }
-
 
 export default configureStore

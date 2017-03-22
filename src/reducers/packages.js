@@ -26,18 +26,18 @@ const counter: (PackagesState, Action) => PackagesState = (
   action
 ) => {
   switch (action.type) {
-  case PACKAGE_SEARCH_SUCCEEDED:
-    return {
-      ...state,
-      ...action.results
+    case PACKAGE_SEARCH_SUCCEEDED:
+      return {
+        ...state,
+        ...action.results
         .map(result => result.package)
         .reduce((packages, npmPackage) => ({
           ...packages,
           [npmPackage.name]: npmPackage
         }), {})
-    }
-  default:
-    return state
+      }
+    default:
+      return state
   }
 }
 

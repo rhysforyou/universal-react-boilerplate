@@ -30,12 +30,12 @@ const App = ({ title }: Props) => (
   <div className={styles.app}>
     <h1 className={styles.title}>{ title }</h1>
     <ul className={styles.navigation}>
-      <Link exact to="/">Home</Link>
-      <Link to="/counter">Counter</Link>
-      <Link to="/async">Async</Link>
+      <Link exact to='/'>Home</Link>
+      <Link to='/counter'>Counter</Link>
+      <Link to='/async'>Async</Link>
     </ul>
 
-    <Route path="/counter" component={GlobalCounter} />
+    <Route path='/counter' component={GlobalCounter} />
   </div>
 )
 

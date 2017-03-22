@@ -10,14 +10,14 @@ export type CounterState = number
 
 const counter: (CounterState, Action) => CounterState = (state = 0, action) => {
   switch (action.type) {
-  case INCREMENT_COUNTER:
-    return state + action.by
-  case DECREMENT_COUNTER:
-    return state - action.by
-  case RESET_COUNTER:
-    return action.to
-  default:
-    return state
+    case INCREMENT_COUNTER:
+      return state + action.by
+    case DECREMENT_COUNTER:
+      return state - action.by
+    case RESET_COUNTER:
+      return action.to
+    default:
+      return state
   }
 }
 

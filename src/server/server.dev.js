@@ -9,7 +9,7 @@ import type { $Request, $Response } from 'express'
 
 const compiler = webpack(config)
 const scriptPaths = ['/bundle.js']
-const initialState = JSON.stringify(new Object())
+const initialState = JSON.stringify({})
 
 const app = express()
 

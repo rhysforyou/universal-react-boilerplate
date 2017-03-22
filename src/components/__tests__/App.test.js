@@ -8,7 +8,7 @@ const setup = propOverrides => {
     title: 'Hello, tests'
   }, propOverrides)
 
-  const wrapper = shallow(<App { ...props } />)
+  const wrapper = shallow(<App {...props} />)
 
   return {
     props,

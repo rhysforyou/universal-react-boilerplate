@@ -10,12 +10,12 @@ import type {
   PackageSearchAction
 } from '../actions/types'
 
-export function searchApi(query: string): Promise<any> {
+export function searchApi (query: string): Promise<any> {
   return fetch(`http://registry.npmjs.org/-/v1/search?text=${query}`)
     .then(response => response.json())
 }
 
-export function *searchPackages(action: PackageSearchAction): Generator<*, *, *> {
+export function * searchPackages (action: PackageSearchAction): Generator<*, *, *> {
   const { query } = action
   try {
     const response = yield call(searchApi, query)
@@ -26,6 +26,6 @@ export function *searchPackages(action: PackageSearchAction): Generator<*, *, *>
   }
 }
 
-export default function *mySaga(): Generator<*, *, *> {
+export default function * mySaga (): Generator<*, *, *> {
   yield takeEvery(PACKAGE_SEARCH, searchPackages)
 }
