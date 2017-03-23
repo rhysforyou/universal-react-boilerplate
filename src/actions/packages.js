@@ -1,22 +1,22 @@
 /* @flow */
 import type {
-  PackageSearchAction,
-  PackageSearchSucceededAction,
-  PackageSearchFailedAction
+  SearchPackagesRequestedAction,
+  SearchPackagesSucceededAction,
+  SearchPackagesFailedAction
 } from './types'
 
-export const PACKAGE_SEARCH = 'PACKAGE_SEARCH'
-export const PACKAGE_SEARCH_SUCCEEDED = 'PACKAGE_SEARCH_SUCCEEDED'
-export const PACKAGE_SEARCH_FAILED = 'PACKAGE_SEARCH_FAILED'
+export const SEARCH_PACKAGES_REQUESTED = 'SEARCH_PACKAGES_REQUESTED'
+export const SEARCH_PACKAGES_SUCCEEDED = 'SEARCH_PACKAGES_SUCCEEDED'
+export const SEARCH_PACKAGES_FAILED = 'SEARCH_PACKAGES_FAILED'
 
-export const packageSearch: (query: string) => PackageSearchAction = query => (
-  { type: PACKAGE_SEARCH, query }
+export const searchPackagesRequested: (query: string) => SearchPackagesRequestedAction = query => (
+  { type: SEARCH_PACKAGES_REQUESTED, query }
 )
 
-export const packageSearchSucceeded: (query: string, results: Array<any>) => PackageSearchSucceededAction = (query, results) => (
-  { type: PACKAGE_SEARCH_SUCCEEDED, query, results }
+export const searchPackagesSucceeded: (query: string, results: Array<any>) => SearchPackagesSucceededAction = (query, results) => (
+  { type: SEARCH_PACKAGES_SUCCEEDED, query, results }
 )
 
-export const packageSearchFailed: (query: string, error: string) => PackageSearchFailedAction = (query, error) => (
-  { type: PACKAGE_SEARCH_FAILED, query, error }
+export const searchPackagesFailed: (query: string, error: string) => SearchPackagesFailedAction = (query, error) => (
+  { type: SEARCH_PACKAGES_FAILED, query, error }
 )

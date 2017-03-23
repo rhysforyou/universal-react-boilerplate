@@ -1,10 +1,10 @@
 /* @flow */
 import {
-  PACKAGE_SEARCH,
-  PACKAGE_SEARCH_SUCCEEDED,
-  PACKAGE_SEARCH_FAILED
+  SEARCH_PACKAGES_REQUESTED,
+  SEARCH_PACKAGES_SUCCEEDED,
+  SEARCH_PACKAGES_FAILED
 } from '../actions/packages'
-import type { Action } from '../actions/types'
+import type { Action, SearchResult } from '../actions/types'
 
 export type Search = { status: 'loading', query: string }
                    | { status: 'loaded', query: string, packages: Array<string> }
@@ -17,22 +17,22 @@ const searches: (SearchesState, Action) => SearchesState = (
   action
 ) => {
   switch (action.type) {
-    case PACKAGE_SEARCH:
+    case SEARCH_PACKAGES_REQUESTED:
       return { ...state,
         [action.query]: {
           status: 'loading',
           query: action.query
         }
       }
-    case PACKAGE_SEARCH_SUCCEEDED:
+    case SEARCH_PACKAGES_SUCCEEDED:
       return { ...state,
         [action.query]: {
           status: 'loaded',
           query: action.query,
-          packages: action.results.map(r => r.package.name)
+          packages: action.results.map((r: SearchResult) => r.package.name)
         }
       }
-    case PACKAGE_SEARCH_FAILED:
+    case SEARCH_PACKAGES_FAILED:
       return { ...state,
         [action.query]: {
           status: 'error',

@@ -1,21 +1,8 @@
 /* @flow */
 import {
-  PACKAGE_SEARCH_SUCCEEDED
+  SEARCH_PACKAGES_SUCCEEDED
 } from '../actions/packages'
-import type { Action } from '../actions/types'
-
-export type Author = {
-  name: string,
-  email: string,
-  url: string
-}
-
-export type Package = {
-  name: string,
-  version: string,
-  description?: string,
-  author?: Author
-}
+import type { Action, Package } from '../actions/types'
 
 export type PackagesState = {
   [key : string]: Package
@@ -26,7 +13,7 @@ const counter: (PackagesState, Action) => PackagesState = (
   action
 ) => {
   switch (action.type) {
-    case PACKAGE_SEARCH_SUCCEEDED:
+    case SEARCH_PACKAGES_SUCCEEDED:
       return {
         ...state,
         ...action.results

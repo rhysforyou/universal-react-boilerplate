@@ -1,16 +1,16 @@
 /* eslint-env jest */
 import { call, put } from 'redux-saga/effects'
 import {
-  packageSearch,
-  packageSearchSucceeded,
-  packageSearchFailed
+  searchPackagesRequested,
+  searchPackagesSucceeded,
+  searchPackagesFailed
 } from '../actions/packages'
 import searchApi from './searchApi'
 import { searchPackages } from './sagas'
 
 describe('searchPackages saga', () => {
   const query = 'react'
-  const action = packageSearch(query)
+  const action = searchPackagesRequested(query)
   const apiResponse = {
     objects: [{
       package: { name: 'react' }
@@ -27,7 +27,7 @@ describe('searchPackages saga', () => {
 
       next = generator.next(apiResponse)
       expect(next.value)
-        .toEqual(put(packageSearchSucceeded(query, apiResponse.objects)))
+        .toEqual(put(searchPackagesSucceeded(query, apiResponse.objects)))
 
       next = generator.next()
       expect(next.done).toBe(true)
@@ -43,7 +43,7 @@ describe('searchPackages saga', () => {
 
       next = generator.throw(apiError)
       expect(next.value)
-        .toEqual(put(packageSearchFailed(query, apiError)))
+        .toEqual(put(searchPackagesFailed(query, apiError)))
 
       next = generator.next()
       expect(next.done).toBe(true)
