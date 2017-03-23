@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import createLogger from 'redux-logger'
 import demoApp from '../reducers/demoApp'
-import mySaga from '../sagas/sagas'
+import rootSaga from '../sagas/sagas'
 
 import type { Store } from 'redux'
 import type { State } from '../reducers/demoApp'
@@ -18,7 +18,7 @@ const configureStore: () => Store<State, Action> = () => {
     undefined,
     composeEnhancers(applyMiddleware(createLogger({ collapsed: true }), sagaMiddleware))
   )
-  sagaMiddleware.run(mySaga)
+  sagaMiddleware.run(rootSaga)
   return store
 }
 

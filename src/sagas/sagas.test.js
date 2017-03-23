@@ -1,8 +1,13 @@
 /* eslint-env jest */
 import sagaHelper from 'redux-saga-testing'
 import { call, put } from 'redux-saga/effects'
-import { packageSearch, packageSearchSucceeded, packageSearchFailed } from '../actions/packages'
-import { searchPackages, searchApi } from './sagas'
+import {
+  packageSearch,
+  packageSearchSucceeded,
+  packageSearchFailed
+} from '../actions/packages'
+import searchApi from './searchApi'
+import { searchPackages } from './sagas'
 
 describe('searchPackages saga', () => {
   const query = 'react'
