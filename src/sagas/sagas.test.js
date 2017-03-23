@@ -1,5 +1,4 @@
 /* eslint-env jest */
-import sagaHelper from 'redux-saga-testing'
 import { call, put } from 'redux-saga/effects'
 import {
   packageSearch,
@@ -20,36 +19,34 @@ describe('searchPackages saga', () => {
   const apiError = new Error('something went wrong')
 
   describe('with a successful API response', () => {
-    const it = sagaHelper(searchPackages(action))
+    it('calls the search API and dispatches a success', () => {
+      const generator = searchPackages(action)
 
-    it('calls the search API', result => {
-      expect(result).toEqual(call(searchApi, 'react'))
-      return apiResponse
-    })
+      let next = generator.next()
+      expect(next.value).toEqual(call(searchApi, 'react'))
 
-    it('and then dispatches a success action', result => {
-      expect(result).toEqual(put(packageSearchSucceeded(query, apiResponse.objects)))
-    })
+      next = generator.next(apiResponse)
+      expect(next.value)
+        .toEqual(put(packageSearchSucceeded(query, apiResponse.objects)))
 
-    it('and then nothing', result => {
-      expect(result).toBeUndefined()
+      next = generator.next()
+      expect(next.done).toBe(true)
     })
   })
 
   describe('with a bad API response', () => {
-    const it = sagaHelper(searchPackages(action))
+    it('calls the search api and dispatches a failure', () => {
+      const generator = searchPackages(action)
 
-    it('calls the search API', result => {
-      expect(result).toEqual(call(searchApi, 'react'))
-      return apiError
-    })
+      let next = generator.next()
+      expect(next.value).toEqual(call(searchApi, 'react'))
 
-    it('and then dispatches a failure action', result => {
-      expect(result).toEqual(put(packageSearchFailed(query, apiError)))
-    })
+      next = generator.throw(apiError)
+      expect(next.value)
+        .toEqual(put(packageSearchFailed(query, apiError)))
 
-    it('and then nothing', result => {
-      expect(result).toBeUndefined()
+      next = generator.next()
+      expect(next.done).toBe(true)
     })
   })
 })
