@@ -40,6 +40,10 @@ ShallowWrapper {
         component={[Function]}
         path="/counter"
     />
+    <Route
+        component={[Function]}
+        path="/async"
+    />
 </div>,
   "nodes": Array [
     <div
@@ -73,6 +77,10 @@ ShallowWrapper {
       <Route
             component={[Function]}
             path="/counter"
+      />
+      <Route
+            component={[Function]}
+            path="/async"
       />
 </div>,
   ],
@@ -146,6 +154,10 @@ ShallowWrapper {
                     component={[Function]}
                     path="/counter"
           />
+          <Route
+                    component={[Function]}
+                    path="/async"
+          />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -179,6 +191,10 @@ ShallowWrapper {
           <Route
                     component={[Function]}
                     path="/counter"
+          />
+          <Route
+                    component={[Function]}
+                    path="/async"
           />
 </div>,
       },
