@@ -3,6 +3,7 @@ import React from 'react'
 import { NavLink, Route } from 'react-router-dom'
 import styles from './App.css'
 import GlobalCounter from '../containers/GlobalCounter'
+import AllPackages from '../containers/AllPackagesList'
 
 import type { Element } from 'react'
 
@@ -36,6 +37,7 @@ const App = ({ title }: Props) => (
     </ul>
 
     <Route path='/counter' component={GlobalCounter} />
+    <Route path='/async' component={AllPackages} />
   </div>
 )
 
