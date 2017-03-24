@@ -12,7 +12,7 @@
     "build:server": "NODE_ENV=production webpack --config config/webpack.config.server.js",
     "start": "node src/server",
     "start:production": "NODE_ENV=production node ./dist",
-    "test": "jest --colors --verbose",
+    "test": "jest --colors --verbose --coverage",
     "lint": "standard | snazzy",
     "flow": "flow",
     "stylelint": "stylelint src/**/*.css",
