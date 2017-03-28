@@ -1,4 +1,4 @@
-// flow-typed signature: 1ba0d87ed0a2da79014e871f3d17152d
+// flow-typed signature: 758a7fc2094314b06d60fb094fed5c9a
 // flow-typed version: <<STUB>>/webpack_v^2.2.1/flow_v0.41.0
 
 /**
@@ -55,6 +55,10 @@ declare module 'webpack/buildin/harmony-module' {
 }
 
 declare module 'webpack/buildin/module' {
+  declare module.exports: any;
+}
+
+declare module 'webpack/buildin/system' {
   declare module.exports: any;
 }
 
@@ -1030,6 +1034,10 @@ declare module 'webpack/lib/webworker/WebWorkerTemplatePlugin' {
   declare module.exports: any;
 }
 
+declare module 'webpack/schemas/ajv.absolutePath' {
+  declare module.exports: any;
+}
+
 declare module 'webpack/web_modules/node-libs-browser' {
   declare module.exports: any;
 }
@@ -1061,6 +1069,9 @@ declare module 'webpack/buildin/harmony-module.js' {
 }
 declare module 'webpack/buildin/module.js' {
   declare module.exports: $Exports<'webpack/buildin/module'>;
+}
+declare module 'webpack/buildin/system.js' {
+  declare module.exports: $Exports<'webpack/buildin/system'>;
 }
 declare module 'webpack/hot/dev-server.js' {
   declare module.exports: $Exports<'webpack/hot/dev-server'>;
@@ -1790,6 +1801,9 @@ declare module 'webpack/lib/webworker/WebWorkerMainTemplatePlugin.js' {
 }
 declare module 'webpack/lib/webworker/WebWorkerTemplatePlugin.js' {
   declare module.exports: $Exports<'webpack/lib/webworker/WebWorkerTemplatePlugin'>;
+}
+declare module 'webpack/schemas/ajv.absolutePath.js' {
+  declare module.exports: $Exports<'webpack/schemas/ajv.absolutePath'>;
 }
 declare module 'webpack/web_modules/node-libs-browser.js' {
   declare module.exports: $Exports<'webpack/web_modules/node-libs-browser'>;

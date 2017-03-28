@@ -1,5 +1,6 @@
 /* @flow */
 import { connect } from 'react-redux'
+import { createSelector } from 'reselect'
 import { searchPackagesRequested } from '../actions/packages'
 import PackageList from '../components/PackageList'
 
@@ -15,17 +16,23 @@ type DispatchProps = {
 
 type OwnProps = {}
 
-const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = state => {
-  if (state.searches.react != null && state.searches.react.status === 'loaded') {
-    return {
-      packages: state.searches.react.packages.map((p: string) => {
-        return state.entities.packages[p]
-      })
-    }
-  } else {
-    return { packages: [] }
-  }
-}
+const reactSearchSelector = state => state.searches.react || {}
+const packagesSelector = state => state.entities.packages
+
+const reactSearchPackageIdsSelector = createSelector(
+  reactSearchSelector,
+  search => search.status === 'loaded' ? search.packages : []
+)
+
+const reactSearchPackagesSelector = createSelector(
+  reactSearchPackageIdsSelector,
+  packagesSelector,
+  (ids, packages) => ids.map(p => packages[p])
+)
+
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = state => ({
+  packages: reactSearchPackagesSelector(state)
+})
 
 const mapDispatchToProps: MapDispatchToProps<State, OwnProps, DispatchProps> = dispatch => ({
   onRefresh: () => dispatch(searchPackagesRequested('react'))
