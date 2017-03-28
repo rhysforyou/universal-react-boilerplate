@@ -7,13 +7,11 @@ import {
 } from '../actions/packages'
 import searchApi from './searchApi'
 
-import type { SearchPackagesRequestedAction } from '../actions/types'
 import type { SearchApiResponse } from './searchApi'
 
-type Saga = Generator<Object, void, Object>
+export type Saga = Generator<Object, void, Object>
 
-export function * searchPackages (action: SearchPackagesRequestedAction): Saga {
-  const { query } = action
+export function * searchPackages ({ query }: { query: string }): Saga {
   try {
     const response: SearchApiResponse = yield call(searchApi, query)
     yield put(searchPackagesSucceeded(query, response.objects))

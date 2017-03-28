@@ -2,15 +2,14 @@
 import GlobalCounter from './containers/GlobalCounter'
 import AllPackagesList from './containers/AllPackagesList'
 
-import rootSaga from './sagas/sagas'
-import { searchPackagesRequested } from './actions/packages'
+import { searchPackages } from './sagas/sagas'
 
 type Route = {|
   component: ReactClass<*>,
   path?: string,
   exact?: boolean,
   routes?: Array<Route>,
-  loadData?: () => Generator<*, void, *>
+  preloaders?: (Object) => Array<Array<*>>
 |}
 
 const routes: Array<Route> = [
@@ -19,9 +18,9 @@ const routes: Array<Route> = [
   },
   { component: AllPackagesList,
     path: '/async',
-    loadData: function * () {
-      yield rootSaga(searchPackagesRequested('react'))
-    }
+    preloaders: (params) => [
+      [ searchPackages, { query: 'react' } ]
+    ]
   }
 ]
 

@@ -7,8 +7,12 @@ import ReactDOMServer from 'react-dom/server'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import { StaticRouter as Router } from 'react-router'
+import { matchRoutes } from 'react-router-config'
+import createSagaMiddleware from 'redux-saga'
 import App from '../components/App'
 import configureStore from '../store/configureStore'
+import routes from '../routes'
+import waitAll from '../sagas/waitAll'
 
 // eslint-disable-next-line no-duplicate-imports
 import type { $Request, $Response } from 'express'
@@ -30,7 +34,18 @@ app.use('/', express.static(path.resolve(__dirname, 'public')))
 
 // Render index template to all routes
 app.get('*', (req: $Request, res: $Response) => {
-  const store = configureStore()
+  const sagaMiddleware = createSagaMiddleware()
+  const store = configureStore(sagaMiddleware)
+  const preloaders = matchRoutes(routes, req.url)
+    .map(match => match.route.preloaders && match.route.preloaders(match.match.params))
+    .filter(preloaders => preloaders != null)
+    .reduce((result, preloader) => result.concat(preloader), [])
+
+  sagaMiddleware.run(waitAll(preloaders))
+    .done.then(() => renderApp(store, req, res))
+})
+
+const renderApp = (store, req, res) => {
   const context = {}
   const innerHTML = ReactDOMServer.renderToString(
     <AppContainer>
@@ -52,7 +67,7 @@ app.get('*', (req: $Request, res: $Response) => {
     // we're good, send the response
     res.render('index', { scriptPaths, innerHTML, initialState })
   }
-})
+}
 
 // Start server
 const port: string = process.env.PORT || '3000'

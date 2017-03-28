@@ -10,9 +10,8 @@ import type { State } from '../reducers/demoApp'
 import type { Action } from '../actions/types'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const sagaMiddleware = createSagaMiddleware()
 
-const configureStore: () => Store<State, Action> = () => {
+const configureStore: (Object) => Store<State, Action> = (sagaMiddleware = createSagaMiddleware()) => {
   const store = createStore(
     demoApp,
     undefined,

@@ -13,9 +13,7 @@ if (typeof window !== 'undefined' && window.initialReduxState) {
   initialState = window.initialReduxState
 }
 
-const sagaMiddleware = createSagaMiddleware()
-
-const configureStore: () => Store<State, Action> = () => {
+const configureStore: (Object) => Store<State, Action> = (sagaMiddleware = createSagaMiddleware()) => {
   const store = createStore(demoApp, initialState, applyMiddleware(sagaMiddleware))
   sagaMiddleware.run(rootSaga)
   return store
