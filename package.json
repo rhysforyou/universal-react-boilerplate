@@ -13,7 +13,7 @@
     "start": "node src/server",
     "start:production": "NODE_ENV=production node ./dist",
     "test": "jest --colors --verbose --coverage",
-    "test:watch": "jest --colors --verbose --coverage --watch",
+    "test:watch": "jest --colors --verbose --watch",
     "lint": "standard | snazzy",
     "flow": "flow",
     "stylelint": "stylelint src/**/*.css",

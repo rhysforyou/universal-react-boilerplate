@@ -19,22 +19,22 @@ ShallowWrapper {
     <ul
         className="navigation"
     >
-        <Link
+        <NavigationLink
             exact={true}
             to="/"
         >
             Home
-        </Link>
-        <Link
+        </NavigationLink>
+        <NavigationLink
             to="/counter"
         >
             Counter
-        </Link>
-        <Link
+        </NavigationLink>
+        <NavigationLink
             to="/async"
         >
             Async
-        </Link>
+        </NavigationLink>
     </ul>
     <Route
         component={[Function]}
@@ -57,22 +57,22 @@ ShallowWrapper {
       <ul
             className="navigation"
       >
-            <Link
+            <NavigationLink
                   exact={true}
                   to="/"
             >
                   Home
-            </Link>
-            <Link
+            </NavigationLink>
+            <NavigationLink
                   to="/counter"
             >
                   Counter
-            </Link>
-            <Link
+            </NavigationLink>
+            <NavigationLink
                   to="/async"
             >
                   Async
-            </Link>
+            </NavigationLink>
       </ul>
       <Route
             component={[Function]}
@@ -133,22 +133,22 @@ ShallowWrapper {
           <ul
                     className="navigation"
           >
-                    <Link
+                    <NavigationLink
                               exact={true}
                               to="/"
                     >
                               Home
-                    </Link>
-                    <Link
+                    </NavigationLink>
+                    <NavigationLink
                               to="/counter"
                     >
                               Counter
-                    </Link>
-                    <Link
+                    </NavigationLink>
+                    <NavigationLink
                               to="/async"
                     >
                               Async
-                    </Link>
+                    </NavigationLink>
           </ul>
           <Route
                     component={[Function]}
@@ -171,22 +171,22 @@ ShallowWrapper {
           <ul
                     className="navigation"
           >
-                    <Link
+                    <NavigationLink
                               exact={true}
                               to="/"
                     >
                               Home
-                    </Link>
-                    <Link
+                    </NavigationLink>
+                    <NavigationLink
                               to="/counter"
                     >
                               Counter
-                    </Link>
-                    <Link
+                    </NavigationLink>
+                    <NavigationLink
                               to="/async"
                     >
                               Async
-                    </Link>
+                    </NavigationLink>
           </ul>
           <Route
                     component={[Function]}

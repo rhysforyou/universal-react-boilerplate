@@ -4,9 +4,9 @@ import {
   searchPackagesRequested,
   searchPackagesSucceeded,
   searchPackagesFailed
-} from '../actions/packages'
-import searchApi from './searchApi'
-import { searchPackages } from './sagas'
+} from '../../actions/packages'
+import searchApi from '../searchApi'
+import { searchPackages } from '../sagas'
 
 describe('searchPackages saga', () => {
   const query = 'react'

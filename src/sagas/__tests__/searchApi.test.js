@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import fetch from 'isomorphic-fetch'
-import searchApi from './searchApi.js'
+import searchApi from '../searchApi.js'
 
 // Mock fetch to return something response-like
 jest.mock('isomorphic-fetch', () => {
