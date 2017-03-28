@@ -1,10 +1,9 @@
 /* @flow */
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
 import styles from './App.css'
-import GlobalCounter from '../containers/GlobalCounter'
-import AllPackages from '../containers/AllPackagesList'
 import NavigationLink from './NavigationLink'
+import routes from '../routes'
 
 type Props = {
   title?: string
@@ -19,8 +18,7 @@ const App = ({ title }: Props) => (
       <NavigationLink to='/async'>Async</NavigationLink>
     </ul>
 
-    <Route path='/counter' component={GlobalCounter} />
-    <Route path='/async' component={AllPackages} />
+    {renderRoutes(routes)}
   </div>
 )
 
