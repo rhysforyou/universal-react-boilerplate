@@ -1,7 +1,7 @@
 # Universal React Boilerplate
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://gitlab.extremely.online/rpowelll/universal-react-boilerplate/blob/master/LICENSE)
-[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-blue.svg?style=flat-square)](https://standardjs.com)
 [![Travis](https://img.shields.io/travis/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://travis-ci.org/rpowelll/universal-react-boilerplate)
 [![Coveralls](https://img.shields.io/coveralls/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://coveralls.io/github/rpowelll/universal-react-boilerplate)
 
