@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import { MemoryRouter } from 'react-router-dom'
+import { StaticRouter } from 'react-router-dom'
 import NavigationLink from '../NavigationLink'
 
 const setup = (propOverrides, render = shallow) => {
@@ -11,9 +11,9 @@ const setup = (propOverrides, render = shallow) => {
   }, propOverrides)
 
   const router = render(
-    <MemoryRouter initialEntries={[props.location]}>
+    <StaticRouter location={props.location} context={{}}>
       <NavigationLink {...props} />
-    </MemoryRouter>
+    </StaticRouter>
   )
   const wrapper = router.find(NavigationLink)
 
