@@ -36,14 +36,16 @@ ShallowWrapper {
             Async
         </NavigationLink>
     </ul>
-    <Route
-        component={[Function]}
-        path="/counter"
-    />
-    <Route
-        component={[Function]}
-        path="/async"
-    />
+    <Switch>
+        <Route
+            path="/counter"
+            render={[Function]}
+        />
+        <Route
+            path="/async"
+            render={[Function]}
+        />
+    </Switch>
 </div>,
   "nodes": Array [
     <div
@@ -74,14 +76,16 @@ ShallowWrapper {
                   Async
             </NavigationLink>
       </ul>
-      <Route
-            component={[Function]}
-            path="/counter"
-      />
-      <Route
-            component={[Function]}
-            path="/async"
-      />
+      <Switch>
+            <Route
+                  path="/counter"
+                  render={[Function]}
+            />
+            <Route
+                  path="/async"
+                  render={[Function]}
+            />
+      </Switch>
 </div>,
   ],
   "options": Object {},
@@ -150,14 +154,16 @@ ShallowWrapper {
                               Async
                     </NavigationLink>
           </ul>
-          <Route
-                    component={[Function]}
-                    path="/counter"
-          />
-          <Route
-                    component={[Function]}
-                    path="/async"
-          />
+          <Switch>
+                    <Route
+                              path="/counter"
+                              render={[Function]}
+                    />
+                    <Route
+                              path="/async"
+                              render={[Function]}
+                    />
+          </Switch>
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -188,14 +194,16 @@ ShallowWrapper {
                               Async
                     </NavigationLink>
           </ul>
-          <Route
-                    component={[Function]}
-                    path="/counter"
-          />
-          <Route
-                    component={[Function]}
-                    path="/async"
-          />
+          <Switch>
+                    <Route
+                              path="/counter"
+                              render={[Function]}
+                    />
+                    <Route
+                              path="/async"
+                              render={[Function]}
+                    />
+          </Switch>
 </div>,
       },
       "_renderedNodeType": 0,
