@@ -13,7 +13,7 @@ const PackageList = ({ packages, onRefresh }: Props) => (
     <button onClick={onRefresh.bind(this)}>Refresh</button>
     <ul>
       {packages.map((p: Package) => (
-        <li>{ p.name }</li>
+        <li key={p.name}>{ p.name }</li>
       ))}
     </ul>
   </div>

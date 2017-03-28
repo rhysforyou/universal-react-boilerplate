@@ -27,7 +27,7 @@ const reactSearchPackageIdsSelector = createSelector(
 const reactSearchPackagesSelector = createSelector(
   reactSearchPackageIdsSelector,
   packagesSelector,
-  (ids, packages) => ids.map(p => packages[p])
+  (ids, packages) => ids.map(id => packages[id])
 )
 
 const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = state => ({
