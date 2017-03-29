@@ -49,7 +49,6 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "copy-webpack-plugin": "^4.0.1",
-    "coveralls": "^2.12.0",
     "css-loader": "^0.26.2",
     "enzyme": "^2.7.1",
     "eslint": "^3.18.0",
@@ -81,7 +80,9 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|less)$": "identity-obj-proxy"
+      "\\.(css|less)$": "identity-obj-proxy",
+      "coverageDirectory": "./coverage/",
+      "collectCoverage": true
     }
   },
   "stylelint": {
