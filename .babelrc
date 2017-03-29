@@ -8,9 +8,6 @@
     "transform-flow-strip-types"
   ],
   "env": {
-    "development": {
-      "plugins": "react-hot-loader/babel"
-    },
     "test": {
       "plugins": ["transform-es2015-modules-commonjs"]
     }
