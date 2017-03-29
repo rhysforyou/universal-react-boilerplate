@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://gitlab.extremely.online/rpowelll/universal-react-boilerplate/blob/master/LICENSE)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-blue.svg?style=flat-square)](https://standardjs.com)
 [![Travis](https://img.shields.io/travis/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://travis-ci.org/rpowelll/universal-react-boilerplate)
-[![Coveralls](https://img.shields.io/coveralls/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://coveralls.io/github/rpowelll/universal-react-boilerplate)
+[![Codecov](https://img.shields.io/codecov/c/github/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://codecov.io/gh/rpowelll/universal-react-boilerplate)
 [![David](https://img.shields.io/david/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://david-dm.org/rpowelll/universal-react-boilerplate)
 
 _This repo provides a relatively full featured starting point for building
