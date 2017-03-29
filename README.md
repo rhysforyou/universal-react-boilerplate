@@ -4,6 +4,7 @@
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-blue.svg?style=flat-square)](https://standardjs.com)
 [![Travis](https://img.shields.io/travis/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://travis-ci.org/rpowelll/universal-react-boilerplate)
 [![Coveralls](https://img.shields.io/coveralls/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://coveralls.io/github/rpowelll/universal-react-boilerplate)
+[![David](https://img.shields.io/david/rpowelll/universal-react-boilerplate.svg?style=flat-square)](https://david-dm.org/rpowelll/universal-react-boilerplate)
 
 _This repo provides a relatively full featured starting point for building
 a modern, universal React application._
