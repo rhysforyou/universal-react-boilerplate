@@ -20,4 +20,3 @@ script:
   - yarn lint
   - yarn stylelint
   - yarn flow
-  - cat coverage/lcov.info | ./node_modules/.bin/coveralls
