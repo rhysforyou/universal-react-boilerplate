@@ -6,7 +6,7 @@ import {
 } from '../actions/counter'
 import type { Action } from '../actions/types'
 
-export type CounterState = number
+import type { CounterState } from './types'
 
 const counter: (CounterState, Action) => CounterState = (state = 0, action) => {
   switch (action.type) {

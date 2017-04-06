@@ -5,7 +5,7 @@ import demoApp from '../reducers/demoApp'
 import rootSaga from '../sagas/sagas'
 
 import type { Store } from 'redux'
-import type { State } from '../reducers/demoApp'
+import type { State } from '../reducers/types'
 import type { Action } from '../actions/types'
 
 let initialState: any | void

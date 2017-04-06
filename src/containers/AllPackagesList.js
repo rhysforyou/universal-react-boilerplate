@@ -4,24 +4,19 @@ import { createSelector } from 'reselect'
 import { searchPackagesRequested } from '../actions/packages'
 import PackageList from '../components/PackageList'
 
-import type { MapStateToProps, MapDispatchToProps } from 'react-redux'
+import type { Dispatch } from 'redux'
 import type { Selector as ReselectSelector } from 'reselect'
-import type { Package } from '../actions/types'
-import type { Search } from '../reducers/searches'
-import type { PackagesState } from '../reducers/packages'
-import type { State } from '../reducers/demoApp'
-
-type Selector<Result> = ReselectSelector<State, void, Result>;
+import type { Action, Package } from '../actions/types'
+import type { State, PackagesState, Search } from '../reducers/types'
 
 type StateProps = { packages: Array<Package> }
+type DispatchProps = { onRefresh: () => Action }
+type OwnProps = { query: string }
+type Selector<Result> = ReselectSelector<State, OwnProps, Result>;
 
-type DispatchProps = {
-  onRefresh: () => void
+const reactSearchSelector: Selector<Search> = (state, { query }) => {
+  return state.searches[query] || { query: query, status: 'loading' }
 }
-
-type OwnProps = {}
-
-const reactSearchSelector: Selector<Search> = state => state.searches.react || { query: 'react', status: 'loading' }
 const packagesSelector: Selector<PackagesState> = state => state.entities.packages
 
 const reactSearchPackageIdsSelector: Selector<Array<string>> = createSelector(
@@ -35,14 +30,18 @@ const reactSearchPackagesSelector: Selector<Array<Package>> = createSelector(
   (ids, packages) => ids.map(id => packages[id])
 )
 
-const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = state => ({
-  packages: reactSearchPackagesSelector(state)
+const mapStateToProps = (state: State, props: OwnProps): StateProps => ({
+  packages: reactSearchPackagesSelector(state, props)
 })
 
-const mapDispatchToProps: MapDispatchToProps<State, OwnProps, DispatchProps> = dispatch => ({
-  onRefresh: () => dispatch(searchPackagesRequested('react'))
+const mapDispatchToProps = (dispatch: Dispatch<Action>, props: OwnProps): DispatchProps => ({
+  onRefresh: () => dispatch(searchPackagesRequested(props.query))
 })
 
-const AllPackagesList = connect(mapStateToProps, mapDispatchToProps)(PackageList)
+const AllPackagesList: ReactClass<*> = connect(mapStateToProps, mapDispatchToProps)(PackageList)
+
+AllPackagesList.defaultProps = {
+  query: 'react'
+}
 
 export default AllPackagesList

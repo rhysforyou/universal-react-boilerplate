@@ -4,19 +4,9 @@ import counter from './counter'
 import packages from './packages'
 import searches from './searches'
 
-import type { CounterState } from './counter'
-import type { SearchesState } from './searches'
-import type { PackagesState } from './packages'
-import type { Action } from '../actions/types'
 import type { Reducer } from 'redux'
-
-export type State = {
-  counter: CounterState,
-  searches: SearchesState,
-  entities: {
-    packages: PackagesState
-  }
-}
+import type { Action } from '../actions/types'
+import type { State } from './types'
 
 const demoApp: Reducer<State, Action> = combineReducers({
   counter,

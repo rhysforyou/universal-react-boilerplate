@@ -1,12 +1,7 @@
 /* @flow */
-import {
-  SEARCH_PACKAGES_SUCCEEDED
-} from '../actions/packages'
-import type { Action, Package } from '../actions/types'
-
-export type PackagesState = {
-  [key : string]: Package
-}
+import { SEARCH_PACKAGES_SUCCEEDED } from '../actions/packages'
+import type { Action } from '../actions/types'
+import type { PackagesState } from './types'
 
 const counter: (PackagesState, Action) => PackagesState = (
   state = {},

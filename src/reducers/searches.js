@@ -6,11 +6,7 @@ import {
 } from '../actions/packages'
 import type { Action, SearchResult } from '../actions/types'
 
-export type Search = { status: 'loading', query: string }
-                   | { status: 'loaded', query: string, packages: Array<string> }
-                   | { status: 'error', query: string, error: Error }
-
-export type SearchesState = { [key: string]: Search }
+import type { SearchesState } from './types'
 
 const searches: (SearchesState, Action) => SearchesState = (
   state = {},

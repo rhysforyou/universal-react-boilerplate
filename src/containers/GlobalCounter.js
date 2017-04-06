@@ -8,7 +8,7 @@ import {
 } from '../actions/counter'
 
 import type { MapStateToProps, MapDispatchToProps } from 'react-redux'
-import type { State } from '../reducers/demoApp'
+import type { State } from '../reducers/types'
 
 type StateProps = { count: number }
 

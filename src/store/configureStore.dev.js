@@ -6,7 +6,7 @@ import demoApp from '../reducers/demoApp'
 import rootSaga from '../sagas/sagas'
 
 import type { Store } from 'redux'
-import type { State } from '../reducers/demoApp'
+import type { State } from '../reducers/types'
 import type { Action } from '../actions/types'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
