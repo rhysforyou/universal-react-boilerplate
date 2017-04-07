@@ -30,11 +30,11 @@ const reactSearchPackagesSelector: Selector<Array<Package>> = createSelector(
   (ids, packages) => ids.map(id => packages[id])
 )
 
-const mapStateToProps = (state: State, props: OwnProps): StateProps => ({
+export const mapStateToProps = (state: State, props: OwnProps): StateProps => ({
   packages: reactSearchPackagesSelector(state, props)
 })
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>, props: OwnProps): DispatchProps => ({
+export const mapDispatchToProps = (dispatch: Dispatch<Action>, props: OwnProps): DispatchProps => ({
   onRefresh: () => dispatch(searchPackagesRequested(props.query))
 })
 

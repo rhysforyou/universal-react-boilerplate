@@ -21,11 +21,11 @@ type DispatchProps = {
 
 type OwnProps = {}
 
-const mapStateToProps = (state: State, props: OwnProps): StateProps => ({
+export const mapStateToProps = (state: State, props: OwnProps): StateProps => ({
   count: state.counter
 })
 
-const mapDispatchToProps = (dispatch: Dispatch<Action>, props: OwnProps): DispatchProps => ({
+export const mapDispatchToProps = (dispatch: Dispatch<Action>, props: OwnProps): DispatchProps => ({
   onIncrement: () => dispatch(incrementCounter()),
   onDecrement: () => dispatch(decrementCounter()),
   onReset: () => dispatch(resetCounter())
