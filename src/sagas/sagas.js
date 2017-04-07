@@ -21,5 +21,6 @@ export function * searchPackages ({ query }: { query: string }): Saga {
 }
 
 export default function * rootSaga (): Saga {
+  // istanbul ignore next
   yield takeEvery(SEARCH_PACKAGES_REQUESTED, searchPackages)
 }

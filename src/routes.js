@@ -12,6 +12,7 @@ type Route = {|
   preloaders?: (Object) => Array<Array<*>>
 |}
 
+// istanbul ignore next
 const routes: Array<Route> = [
   { component: GlobalCounter,
     path: '/counter'
