@@ -31,5 +31,5 @@ it('dispatches actions back to the store', () => {
   const calls = dispatch.mock.calls
   expect(calls.length).toBe(1)
   expect(calls[0][0].type).toBe('SEARCH_PACKAGES_REQUESTED')
-  expect(calls[0][0].query).toBe('react')
+  expect(calls[0][0].query).toBe(props.query)
 })
