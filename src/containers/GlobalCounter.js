@@ -7,24 +7,25 @@ import {
   resetCounter
 } from '../actions/counter'
 
-import type { MapStateToProps, MapDispatchToProps } from 'react-redux'
+import type { Dispatch } from 'redux'
 import type { State } from '../reducers/types'
+import type { Action } from '../actions/types'
 
 type StateProps = { count: number }
 
 type DispatchProps = {
-  onIncrement: () => void,
-  onDecrement: () => void,
-  onReset: () => void
+  onIncrement: () => Action,
+  onDecrement: () => Action,
+  onReset: () => Action
 }
 
 type OwnProps = {}
 
-const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = state => ({
+const mapStateToProps = (state: State, props: OwnProps): StateProps => ({
   count: state.counter
 })
 
-const mapDispatchToProps: MapDispatchToProps<State, OwnProps, DispatchProps> = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch<Action>, props: OwnProps): DispatchProps => ({
   onIncrement: () => dispatch(incrementCounter()),
   onDecrement: () => dispatch(decrementCounter()),
   onReset: () => dispatch(resetCounter())
