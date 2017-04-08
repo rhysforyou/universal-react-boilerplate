@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import PropTypes from 'prop-types'
 import { renderRoutes } from 'react-router-config'
 import styles from './App.css'
 import NavigationLink from './NavigationLink'
@@ -23,7 +24,7 @@ const App = ({ title }: Props) => (
 )
 
 App.propTypes = {
-  title: React.PropTypes.string.isRequired
+  title: PropTypes.string.isRequired
 }
 
 App.defaultProps = {

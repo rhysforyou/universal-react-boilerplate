@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import type { Package } from '../actions/types'
 
@@ -20,8 +21,8 @@ const PackageList = ({ packages, onRefresh }: Props) => (
 )
 
 PackageList.propTypes = {
-  packages: React.PropTypes.array.isRequired,
-  onRefresh: React.PropTypes.func.isRequired
+  packages: PropTypes.array.isRequired,
+  onRefresh: PropTypes.func.isRequired
 }
 
 export default PackageList

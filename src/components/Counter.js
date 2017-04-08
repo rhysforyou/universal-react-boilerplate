@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export type Props = {
   count: number,
@@ -18,10 +19,10 @@ const Counter = ({ count, onIncrement, onDecrement, onReset }: Props) => (
 )
 
 Counter.propTypes = {
-  count: React.PropTypes.number.isRequired,
-  onIncrement: React.PropTypes.func,
-  onDecrement: React.PropTypes.func,
-  onReset: React.PropTypes.func
+  count: PropTypes.number.isRequired,
+  onIncrement: PropTypes.func,
+  onDecrement: PropTypes.func,
+  onReset: PropTypes.func
 }
 
 Counter.defaultProps = {
