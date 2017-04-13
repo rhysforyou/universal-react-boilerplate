@@ -1,4 +1,4 @@
-// flow-typed signature: 758a7fc2094314b06d60fb094fed5c9a
+// flow-typed signature: 0584ff9650e00b17cd33a11b79d525a5
 // flow-typed version: <<STUB>>/webpack_v^2.2.1/flow_v0.41.0
 
 /**
@@ -531,6 +531,10 @@ declare module 'webpack/lib/Entrypoint' {
 }
 
 declare module 'webpack/lib/EnvironmentPlugin' {
+  declare module.exports: any;
+}
+
+declare module 'webpack/lib/ErrorHelpers' {
   declare module.exports: any;
 }
 
@@ -1426,6 +1430,9 @@ declare module 'webpack/lib/Entrypoint.js' {
 }
 declare module 'webpack/lib/EnvironmentPlugin.js' {
   declare module.exports: $Exports<'webpack/lib/EnvironmentPlugin'>;
+}
+declare module 'webpack/lib/ErrorHelpers.js' {
+  declare module.exports: $Exports<'webpack/lib/ErrorHelpers'>;
 }
 declare module 'webpack/lib/EvalDevToolModulePlugin.js' {
   declare module.exports: $Exports<'webpack/lib/EvalDevToolModulePlugin'>;
