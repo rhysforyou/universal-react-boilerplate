@@ -5,9 +5,9 @@ import { mapStateToProps, mapDispatchToProps } from '../AllPackagesList'
 const npmPackage = { name: 'react' }
 const state = {
   entities: {
-    packages: {
+    packages: Map({
       react: npmPackage
-    }
+    })
   },
   searches: Map({
     react: {

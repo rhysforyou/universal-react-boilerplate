@@ -4,9 +4,7 @@ import type { Package } from '../actions/types'
 
 export type CounterState = number
 
-export type PackagesState = {
-  [key : string]: Package
-}
+export type PackagesState = Map<string, Package>
 
 export type Search = { status: 'loading', query: string }
                    | { status: 'loaded', query: string, packages: Array<string> }
