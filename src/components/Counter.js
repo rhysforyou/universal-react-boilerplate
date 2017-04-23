@@ -1,6 +1,5 @@
 /* @flow */
 import React from 'react'
-import PropTypes from 'prop-types'
 
 export type Props = {
   count: number,
@@ -17,13 +16,6 @@ const Counter = ({ count, onIncrement, onDecrement, onReset }: Props) => (
     {onReset && <button onClick={onReset.bind(this)}>Reset</button>}
   </div>
 )
-
-Counter.propTypes = {
-  count: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func,
-  onDecrement: PropTypes.func,
-  onReset: PropTypes.func
-}
 
 Counter.defaultProps = {
   count: 0

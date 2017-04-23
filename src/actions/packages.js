@@ -17,6 +17,6 @@ export const searchPackagesSucceeded: (query: string, results: Array<any>) => Se
   { type: SEARCH_PACKAGES_SUCCEEDED, query, results }
 )
 
-export const searchPackagesFailed: (query: string, error: string) => SearchPackagesFailedAction = (query, error) => (
+export const searchPackagesFailed: (query: string, error: Error) => SearchPackagesFailedAction = (query, error) => (
   { type: SEARCH_PACKAGES_FAILED, query, error }
 )

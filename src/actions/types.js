@@ -34,7 +34,7 @@ export type ResetCounterAction = { type: 'RESET_COUNTER', to: number }
 
 export type SearchPackagesRequestedAction = { type: 'SEARCH_PACKAGES_REQUESTED', query: string }
 export type SearchPackagesSucceededAction = { type: 'SEARCH_PACKAGES_SUCCEEDED', query: string, results: Array<SearchResult> }
-export type SearchPackagesFailedAction = { type: 'SEARCH_PACKAGES_FAILED', query: string, error: string }
+export type SearchPackagesFailedAction = { type: 'SEARCH_PACKAGES_FAILED', query: string, error: Error }
 
 export type Action = IncrementCounterAction
                    | DecrementCounterAction

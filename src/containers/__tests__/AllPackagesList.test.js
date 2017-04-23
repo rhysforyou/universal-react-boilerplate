@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import { Map } from 'immutable'
 import { mapStateToProps, mapDispatchToProps } from '../AllPackagesList'
 
 const npmPackage = { name: 'react' }
@@ -8,13 +9,13 @@ const state = {
       react: npmPackage
     }
   },
-  searches: {
+  searches: Map({
     react: {
       status: 'loaded',
       query: 'react',
       packages: ['react']
     }
-  }
+  })
 }
 const props = { query: 'react' }
 

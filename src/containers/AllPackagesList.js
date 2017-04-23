@@ -15,7 +15,7 @@ type OwnProps = { query: string }
 type Selector<Result> = ReselectSelector<State, OwnProps, Result>;
 
 const reactSearchSelector: Selector<Search> = (state, { query }) => {
-  return state.searches[query] || { query: query, status: 'loading' }
+  return state.searches.get(query, { query: query, status: 'loading' })
 }
 const packagesSelector: Selector<PackagesState> = state => state.entities.packages
 

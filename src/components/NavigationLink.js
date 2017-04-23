@@ -1,6 +1,5 @@
 /* @flow */
 import React from 'react'
-import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import styles from './NavigationLink.css'
 
@@ -21,14 +20,5 @@ const NavigationLink = ({ to, exact, children }: Props) => (
       activeClassName={styles.active}>{ children }</NavLink>
   </li>
 )
-
-NavigationLink.propTypes = {
-  to: PropTypes.string.isRequired,
-  exact: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string
-  ])
-}
 
 export default NavigationLink

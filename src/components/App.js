@@ -1,6 +1,5 @@
 /* @flow */
 import React from 'react'
-import PropTypes from 'prop-types'
 import { renderRoutes } from 'react-router-config'
 import styles from './App.css'
 import NavigationLink from './NavigationLink'
@@ -22,10 +21,6 @@ const App = ({ title }: Props) => (
     {renderRoutes(routes)}
   </div>
 )
-
-App.propTypes = {
-  title: PropTypes.string.isRequired
-}
 
 App.defaultProps = {
   title: 'Hello Universal React'
